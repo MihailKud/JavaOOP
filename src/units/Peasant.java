@@ -7,12 +7,13 @@ public class Peasant extends Person {
     protected Integer woodNumber; //количество заготовленной крестьянином древесины для изготовления стрел и копий
     protected Integer ironNumber; //количество железа для наконечеников стрел и копий
 
-    public Peasant(String name){
-        super(name);
+    public Peasant(String name, int x, int y){
+        super(name, x, y);
         spearNumber = 0;
         arrowNumber = 0;
         woodNumber = 10;
         ironNumber = 10;
+        initiative = 0;
     }
     // действие заготовка древесины
     public void harvestingOfWood(){
@@ -51,5 +52,9 @@ public class Peasant extends Person {
             this.spearNumber = this.spearNumber - 1;
             person.spearNumber = person.spearNumber + 1;
         }
+    }
+    @Override
+    public void step(){
+
     }
 }

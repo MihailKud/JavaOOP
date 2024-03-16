@@ -3,8 +3,9 @@ package units;
 // разбойник
 public class Outlaw extends Person{
 
-    public Outlaw(String name){
-        super(name);
+    public Outlaw(String name, int x, int y){
+        super(name, x, y);
+        initiative = 2;
     }
     // действие побить
     public void beat(Person person){
@@ -21,5 +22,9 @@ public class Outlaw extends Person{
         if (person instanceof Crossbowman){
             ((Crossbowman) person).arrowNumber -= 1;
         }
+    }
+    @Override
+    public void step(){
+
     }
 }
